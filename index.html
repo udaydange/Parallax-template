@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Web template responsive</title>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/animate.css" />
+<script src="js/jquery.min.js"></script>
+</head>
+
+<body>
+	<header id="head">
+    	<div class="head_container">
+            <div id="logo" class="wow pulse" data-wow-iteration="infinite" data-wow-duration="2s" data-wow-delay="200ms" style="animation-iteration-count:infinite;animation-delay:200ms;"><a href="#">JUMBLE</a></div>
+            <span class="mob_menu">Menu</span>
+            <nav class="navigation">
+                <ul>
+                    <li class="active"><a href="#head">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="banner_content">
+        	<div class="bcontent wow fadeInDown">
+            	<h2>Content to be displayed on the page.</h2>
+                <input type="button" value="KNOW MORE" />
+             </div>
+            </div>
+            <span id="about"></span>
+    </header>
+    
+    <section id="content_container">
+    	<div id="content_one">
+            <div class="content">
+                <div class="quotes">
+                    <h2 class="wow flipInX">WHO WE ARE!</h2>
+                    <p class="wow fadeInLeft">This is a paragraph. Writing in paragraphs lets your visitor find what they are looking for quickly and easily. Make sure your titles stand out from the rest of the text.</p>
+                    <input class="btnmore wow fadeInLeft" type="button" value="READ MORE" />
+                </div>
+                <div class="circularbase circularimg_one"></div>
+            </div>
+            	    	
+        </div>
+        
+    	<div class="imgcontent"></div><span id="services"></span>
+        
+        <div class="clear-fix"></div>
+        
+    	<div id="content_one">
+            <div class="content">
+                <div class="quotes">
+                    <h2 class="wow flipInX"><br />OUR FORTEY!</h2>
+                    <p class="wow fadeInLeft">This is a paragraph. Writing in paragraphs lets your visitor find what they are looking for quickly and easily. Make sure your titles stand out from the rest of the text.</p>
+                    <input class="btnmore" type="button" value="READ MORE" />
+                </div>
+                <div class="circularbase circularimg_second"></div>
+            </div>    	
+        </div>
+    	<div class="clear-fix"></div>
+    </section>
+		<span id="contact"></span>
+	    <div id="googleMap" style="width:100%;height:380px;"></div>    
+
+    <section class="subscribe">
+    	<h2 class="wow flash">SUBSCRIBE NOW!</h2>
+        <p class="wow fadeInUp">Click the <b>subscribe now</b> button for our daily email subscription.
+         <input type="button" class="btnSubscribe wow rollIn" value="Subscribe Now"></p>
+
+    </section>
+
+    <footer id="footers">
+    	<div id="fabout">
+        	<p></p>
+        </div>
+        <div class="social_icon"></div>
+        <div id="copyright">
+        	<p class="wow fadeInLeft">&copy; All rights reserved</p>
+		</div>
+    </footer>
+
+<script type="text/javascript" src="js/script.js"></script>
+<script src="js/wow.min.js"></script>  
+<script src="http://maps.googleapis.com/maps/api/js"></script>  
+<script src="js/jquery.scrollTo.js"></script>
+<script>
+
+		function initialize() {
+	  var mapProp = {
+		center:new google.maps.LatLng(51.508742,-0.120850),
+		zoom:5,
+		mapTypeId:google.maps.MapTypeId.ROADMAP
+	  };
+	  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+
+</script>
+
+<script>
+		$(document).ready(function() {
+			$(".mob_menu").click(function(){
+				$(".navigation").slideToggle(400,function(){
+					$(this).toggleClass("nav-expanded").css('display',' ');
+				});
+			});
+		});
+	/*400,function(){
+					$(this).toggleClass("menu_expanded").css('display','');
+				});*/	
+</script>
+
+
+
+
+    </body>
+</html>
